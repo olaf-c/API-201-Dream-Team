@@ -1,0 +1,42 @@
+ChatGPT-6 Luna Prompt:
+
+Make a jupyter notebook and github code repository:
+
+
+
+Divide it into 4 code blocks: data upload/package installation, cleaning, analysis by year, analysis by group
+
+
+
+Before each section, include a written text with relevant sections of this prompt and a separate additional explanation of the code and explicitly state any assumptions. Do not create new functions. Keep the code as a modular script. Run the script to ensure it works and print out the graphs.&#x20;
+
+
+
+Produce the violin plots with quartiles and mean marked.  Include the individual points with some transparency and some jitter.  Make sure the distribution transparency is light enough that the individual dots can be seen. Produce the graphs in an editorial style like you would see in a NYT data analysis. Use a limited palette of colorblind friendly colors. Use different colors for different groups and keep them consistent between plots. The legends should be to the right of the graph. Use a white circle for mean. Simple titles and legends. Increase the gap between the title and subtitle so they don't overlap.&#x20;
+
+1. Data upload
+   1. specify package versions
+2. Cleaning
+   1. Replace -99 with NaN
+3. Over time graph
+   1. &#x20;Y axis fatalities_high "Peak Fatality Estimate" log adjusted, X axis year, color by successful not successful. Regress the two categories. Show confidence interval.&#x20;
+4. &#x20;Analysis by Year
+   1. Copy the original data and Group by 1994/before and after 1994
+   2. Take average fatalities_high of both and compare avFatal_1994_and_before and avFatal_post_1994
+   3. Do a two-tailed t-test with H0 being avFatal_1994_and_before - avFatal_post_1994 =0, use an alpha of 0.05
+   4. Create a new column of log_adjusted_fatalities from fatalities_high
+   5. Use log_adjusted_fatalities grouped by <=1994 and >1994, to produce two separate figures (1 a box plot and the other a violin plot)
+5. &#x20;Analysis by group
+   1. Copy the original data and group by ID
+   2. Do an anova tests alpha = 0.05 where H0 is no difference between group average high_fatality estimate
+      1. high_fatality v different flank responses
+      2. high_fatality v Presence of a violent flank&#x20;
+      3. high_fatality v Size of the campaign
+   3. Create a new column of log_adjusted_fatalities . Create violin plots of the following categories. Title each with the significance results of the relevant anova test. Replace the numerical codings with descriptive labels for the x axis. Add significance stars where appropriate. In the written block of the notebook, justify the use of any star.
+      1. log_adjusted_fatalities v different flank responses
+      2. log_adjusted_fatalities v Presence of a violent flank&#x20;
+         1. Separate graph of just campaign-level fatalities_high for campaigns coded violent_flank = 1 (no violent flank) versus 2 (violent flank)&#x20;
+      3. log_adjusted_fatalities v Size of the campaign
+6. &#x20;Create a table of pair-wise comparisons. Column 1 (which pairs are being compared e.g. X v Y), Column 2 is the average high_fatality of the first group (e.g. average high_fatality of x). Column 2 is difference in mean (e.g. average x - average y). Column 3 is p value based on H0 difference in mean being 0 (i.e. H0: average x - average y = 0). Column 4 is pvalue adjusted (bonferonni).&#x20;
+   1. Include in the table a comparison of all the subgroups within the flank responses, Presence of a violent flank, or size of the campaign groupings
+   2. Additionally print the table as an image
