@@ -9,8 +9,6 @@
 ## Analysis and documentation
 - Document assumptions about cleaning, campaign/year grouping, category coding, summary statistics, missing values, and the independence of observations.
 - State each hypothesis, test type and tail, alpha, reported statistic, p-value, and any multiple-comparison adjustment.
-- Distinguish campaign-year observations from campaign-level summaries. Explain any aggregation (including modal category rules) and distinguish raw fatality means from log-adjusted plot values.
-- Interpret omnibus ANOVA results as evidence that at least one group mean differs; use adjusted pairwise tests to identify specific contrasts. Do not claim causality from descriptive regressions or group comparisons.
 - Preserve descriptive labels for coded categories and describe the meaning of significance stars and adjusted p-values.
 
 ## Notebook and visual conventions
@@ -21,5 +19,5 @@
 - Keep assumptions and code explanations in prose before each notebook section. Do not add helper functions to make the notebook less editable.
 
 ## Validation
-- After code changes, check syntax and run the analysis script from the repository root with the pinned dependencies and required input file available. Confirm that expected figures are generated and the notebook still has four code cells.
+- After code changes, check syntax and run the analysis script from the repository root with the pinned dependencies and required input file available. Confirm that expected figures are generated
 - Do not add or claim tests that were not run. For documentation-only changes, check links, paths, and consistency with the current analysis outputs.
