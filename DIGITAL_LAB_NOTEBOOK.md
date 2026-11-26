@@ -22,3 +22,10 @@ Dates below use America/New_York and follow the dated activity in the chat log. 
 - Added `AGENTS.md` with repository-specific AI rules, this digital lab notebook, and `RESULTS_SUMMARY.md`.
 - Moved the eight PNGs from the repository root into `output_17246b2/`. This folder name identifies the repository revision that held the images before this organizational change.
 - No analysis code or source data was changed.
+
+## 2026-11-26
+- Removed all ANOVA comparisons and the fitted linear regression over time from the analysis code and notebook. Kept annual means by success status and added 95% bootstrap confidence intervals on the line chart.
+- Retained the pre/post-1994 two-sided Welch test and the campaign-level pairwise Welch comparisons with Bonferroni adjustments.
+- Added a three-factor set of pairwise mean-difference line charts with 95% Welch confidence intervals; updated the pairwise table to include interval bounds.
+- Ran the modular script successfully. It generated 11 figures/tables in the new `output_ba65064/` directory. No source data was uploaded.
+- Updated repository guidance and results documentation to describe the current methods and output-folder convention.
